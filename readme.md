@@ -196,7 +196,7 @@ Redirect user to panel. :
 ## Assemble web page
 
 #### Add /panel endpoint
- Add the following tag to your `<endpoints>` tag within your `gos.gxml` file.
+ Add the following tag to your `<endpoints>` tag within your `gos.gxml` file. The endpoint will be set to type `star`, this will make any sub set paths use this endpoint code. For example `/panel/path/test` and `/panel/virtual/page` will invoke the same code functionality. 
 
 	<end path="/panel" type="star">
 	</end>
