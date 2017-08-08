@@ -208,7 +208,7 @@ Initialize page wrapper model :
 
 	page := PanelPage{}
 
-Add some security. The following statement will evaluate if the session variable `name` exists, if not the login form will be set as the `Page.Body`. The  function `bLogin` is used to generate HTML of your template. Since no `struct` was specified Gos will revert to struct `NoStruct` as the template's model. To build any template the syntax is `b<template name>`. If the user is logged in the Body of the `Page` template is changed as needed. :
+Add some security. The following statement will evaluate if the session variable `name` exists, if not the login form will be set as the `Page.Body`. The  function `bLogin` is used to generate HTML of your template. Since no `struct` was specified Gos will revert to struct `NoStruct` as the template's model. To build any template the syntax is `b<template name>`. If the user is logged in, the Body of the `Page` template is changed as needed. :
 
 
 	if _, ok := session.Values["name"]; ok  {
