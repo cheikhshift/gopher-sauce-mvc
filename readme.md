@@ -237,7 +237,42 @@ Compile template :
 
 	html := bPage(page)
 	w.Write([]byte(html)) 	
-    
+
+`<end>` tag should look like this :
+
+       <end path="/panel"  type="star" >
+      
+      	// writing directly to control headers
+
+		page := PanelPage{}
+		
+		if _, ok := session.Values["name"]; ok  {
+			route := strings.Split(r.URL.Path, "/")
+			if len(route) > 2 {
+				name := session.Values["name"].(string)
+				panel := UserPanel{Name: name }
+				if route[2] == "one" {
+				 	page.Body = bPanel(panel)
+				} else {
+					page.Body = bPanelTwo(panel)
+				}
+			} else {
+				 http.Redirect(w,r,"/panel/one",307)
+			}
+
+		} else {
+
+			page.Body = bLogin(NoStruct{})
+
+		}
+
+		
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Content-Type",  "text/html")
+		w.Write([]byte(bPage(page)))
+		  
+      </end> 
+
 ### Testing
 Run project :
 
