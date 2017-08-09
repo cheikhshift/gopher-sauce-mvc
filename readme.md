@@ -181,9 +181,9 @@ Save session before redirection (crucial) :
 
 	session.Save(r,w)
 
-Redirect user to panel. :
+Redirect user to non-existant page. :
 
-	http.Redirect(w,r,"/panel/one",307)
+	http.Redirect(w,r,"/panel/login",307)
 
 `<end>` tag should look like this : 
 
