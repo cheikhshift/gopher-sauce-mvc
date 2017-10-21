@@ -7,7 +7,7 @@ Build website pages with Go lang code.
 ### Requirements
 
 - Go lang
-- [Gopher Sauce](https://github.com/cheikhshift/Gopher-Sauce/blob/master/readme.md)
+- [Gopher Sauce](https://gophersauce.com)
 
 ## Getting started
 (unix commands)
